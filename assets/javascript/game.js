@@ -55,6 +55,7 @@ let game = {
   },
   checkGuesses: function() {
     if (guesses === 0) {
+      alert("You ran out of guesses");
       games++;
       document.getElementById("wins").innerHTML = wins + " / " + games;
       game.resetGame();
@@ -69,6 +70,7 @@ let game = {
   },
   checkForWin: function() {
     if (hideTeam.join("").toUpperCase() === teamToGuess.toUpperCase()) {
+      alert("You guessed the team!!!");
       wins++;
       games++;
       document.getElementById("wins").innerHTML = wins + " / " + games;
