@@ -52,12 +52,11 @@ for (let i = 0; i < teamToGuess.length; i++) {
 document.getElementById("display").innerHTML = hideTeam.join("");
 // displays users guesses
 document.getElementById("lives").innerHTML = guesses;
-
 // event listener for when user presses a key
 document.addEventListener("keypress", function(pressed) {
   // key user pressed
   let keyPressed = pressed.key;
-  // check user guess to team to guess
+  // checks if keyPressed is in teamToGuess
   let charExists = teamToGuess.indexOf(keyPressed) >= 0;
   // pushes key pressed into an array of pressed keys
   guessedLetters.push(keyPressed.toUpperCase());
