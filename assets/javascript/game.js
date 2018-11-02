@@ -88,12 +88,11 @@ let game = {
       hideTeam.push("-");
     }
     document.getElementById("display").innerHTML = hideTeam.join("");
+    document.getElementById("guessedLetters").innerHTML = "";
     console.log(teamToGuess);
   }
 };
-
 console.log("Team to guess " + teamToGuess);
-
 // hides team name and sets to '-'
 for (let i = 0; i < teamToGuess.length; i++) {
   hideTeam.push(" _ ");

@@ -7,3 +7,6 @@ body {
   background-position: center;
   background-size: cover;
 }
+.container {
+  min-height: calc(100% - 120px);
+}
