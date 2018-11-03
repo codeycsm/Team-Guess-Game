@@ -8,5 +8,8 @@ body {
   background-size: cover;
 }
 .container {
-  min-height: calc(100% - 120px);
+  min-height: calc(100% - 100px);
+}
+.row {
+  background-color: rgba(119, 136, 153, 0.4);
 }

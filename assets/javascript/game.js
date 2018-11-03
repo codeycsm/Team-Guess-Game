@@ -55,26 +55,35 @@ let game = {
   },
   checkGuesses: function() {
     if (guesses === 0) {
-      alert("You ran out of guesses");
+      setTimeout(function() {
+        {
+          alert("You ran out of guesses");
+          game.resetGame();
+        }
+      }, 200);
+
       games++;
-      document.getElementById("wins").innerHTML = wins + " / " + games;
-      game.resetGame();
+      document.querySelector("#wins").innerHTML = wins + " / " + games;
     }
   },
   updateStats: function() {
-    document.getElementById("display").innerHTML = hideTeam.join("");
-    document.getElementById("guessedLetters").innerHTML = guessedLetters.join(
+    document.querySelector("#display").innerHTML = hideTeam.join("");
+    document.querySelector("#guessedLetters").innerHTML = guessedLetters.join(
       ""
     );
-    document.getElementById("lives").innerHTML = guesses;
+    document.querySelector("#lives").innerHTML = guesses;
   },
   checkForWin: function() {
     if (hideTeam.join("").toUpperCase() === teamToGuess.toUpperCase()) {
-      alert("You guessed the team!!!");
       wins++;
       games++;
-      document.getElementById("wins").innerHTML = wins + " / " + games;
-      game.resetGame();
+      setTimeout(function() {
+        {
+          alert("You guessed the Team Correctly");
+          document.querySelector("#wins").innerHTML = wins + " / " + games;
+          game.resetGame();
+        }
+      }, 200);
     }
   },
   resetGame: function() {
@@ -83,26 +92,23 @@ let game = {
     teamToGuess = teams[randomNum];
     hideTeam = [];
     guessedLetters = [];
-    for (let i = 0; i < hideTeam.length; i++) {
-      hideTeam.pop("");
-    }
     for (let i = 0; i < teamToGuess.length; i++) {
-      hideTeam.push("-");
+      hideTeam.push(" - ");
     }
-    document.getElementById("display").innerHTML = hideTeam.join("");
-    document.getElementById("guessedLetters").innerHTML = "";
+    document.querySelector("#display").innerHTML = hideTeam.join("");
+    document.querySelector("#guessedLetters").innerHTML = "";
   }
 };
-// hides team name and sets to '-'
+// hides team name and sets to '_'
 for (let i = 0; i < teamToGuess.length; i++) {
   hideTeam.push(" _ ");
 }
 // displays hidden array
-document.getElementById("display").innerHTML = hideTeam.join("");
+document.querySelector("#display").innerHTML = hideTeam.join("");
 // displays users guesses
-document.getElementById("lives").innerHTML = guesses;
+document.querySelector("#lives").innerHTML = guesses;
 // displays users wins
-document.getElementById("wins").innerHTML = wins + " / " + games;
+document.querySelector("#wins").innerHTML = wins + " / " + games;
 // event listener for when user presses a key
 document.addEventListener("keypress", function(pressed) {
   // key user pressed
