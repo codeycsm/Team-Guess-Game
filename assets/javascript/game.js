@@ -32,6 +32,7 @@ let teams = [
   "titans",
   "redskins"
 ];
+// key user pressed
 let keyPressed;
 // letters user guessed
 let guessedLetters = [];
