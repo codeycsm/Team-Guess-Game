@@ -40,7 +40,7 @@ let guessedLetters = [];
 let guesses = 10;
 let wins = 0;
 let games = 0;
-let randomNum = Math.floor(Math.random() * 32);
+let randomNum = Math.floor(Math.random() * 33);
 // Team chosen
 let teamToGuess = teams[randomNum];
 // array to hide and compare team and user guess
